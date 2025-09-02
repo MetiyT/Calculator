@@ -1,23 +1,21 @@
-# Calculator for only 10 and 5
+# Simple Calculator Program
 
-num1 = 10
-num2 = 5
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operation = input("Enter operation (+, -, *, /): ")
 
-# Ask the user for the operator
-operator = input("Enter an operator (+, -, *, /): ")
-
-# Perform operation
-if operator == '+':
+if operation == '+':
     result = num1 + num2
-    print(f"{num1} + {num2} = {result}")
-elif operator == '-':
+elif operation == '-':
     result = num1 - num2
-    print(f"{num1} - {num2} = {result}")
-elif operator == '*':
+elif operation == '*':
     result = num1 * num2
-    print(f"{num1} * {num2} = {result}")
-elif operator == '/':
-    result = num1 / num2
-    print(f"{num1} / {num2} = {result}")
+elif operation == '/':
+    if num2 != 0:
+        result = num1 / num2
+    else:
+        result = "Error! Division by zero."
 else:
-    print("Invalid operator. Please use +, -, *, or /.")
+    result = "Invalid operation"
+
+print(f"{num1} {operation} {num2} = {result}")
